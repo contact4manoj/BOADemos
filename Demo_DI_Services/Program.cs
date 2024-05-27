@@ -41,6 +41,7 @@ builder.Services.AddTransient<IMyTransientService, MyService>();
 // Scoped: a different object is provided for each request.
 builder.Services.AddScoped<IMyScopedService, MyService>();
 
+
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
