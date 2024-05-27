@@ -28,7 +28,7 @@ using Demo_DI_Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//------- Add services to the DI container
+//------- Add services to the DI container (ConfigureServices)
 
 // Singleton: only one instance of the resource is created and is reused anytime it is requested.
 // builder.Services.AddSingleton(typeof(MyService));
@@ -41,16 +41,19 @@ builder.Services.AddTransient<IMyTransientService, MyService>();
 // Scoped: a different object is provided for each request.
 builder.Services.AddScoped<IMyScopedService, MyService>();
 
-
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+
 var app = builder.Build();
 
-// -------- Configure the HTTP request pipeline.
+
+// -------- Configure the HTTP request pipeline.  (Configure)
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

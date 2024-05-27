@@ -35,7 +35,7 @@ namespace Demo_DI_Services.Controllers
             _objTransientService2 = objTransientService2;
         }
 
-        // [Route("/api/Attempt1")]
+        // [Route("/api/demo/Attempt1")]
         // [HttpGet]
         [HttpGet("Attempt1")]
         public IActionResult Attempt1()
