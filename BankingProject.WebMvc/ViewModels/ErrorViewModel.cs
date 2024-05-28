@@ -1,4 +1,4 @@
-namespace Demo_Banking.Models
+namespace BankingProject.WebMvc.ViewModels
 {
     public class ErrorViewModel
     {

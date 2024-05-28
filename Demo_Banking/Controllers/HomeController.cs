@@ -1,4 +1,4 @@
-using Demo_Banking.Models;
+using Demo_Banking.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

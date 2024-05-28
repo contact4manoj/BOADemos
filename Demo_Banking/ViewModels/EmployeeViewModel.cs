@@ -2,7 +2,7 @@
 
 namespace Demo_Banking.ViewModels;
 
-public class Employee
+public class EmployeeViewModel
 {
 
     public int Id { get; set; }

@@ -2,7 +2,31 @@
     ViewData["Title"] = "Home Page";
 }
 
+<h1>@ViewData["Title"]</h1>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<p>Hello world</p>
+
+
+
+@{
+    int[] arrInt = { 10, 20, 30, 40, 50 };
+
+    <ul>
+        @foreach(int i in arrInt)
+        {
+            <li> @i </li>        
+        }
+    </ul>
+}
+
+@{
+    int length = arrInt.Length;
+}
+
+@arrInt.Length
+

@@ -61,8 +61,8 @@ namespace Demo_Banking.Controllers
         [HttpGet]
         public IActionResult GenerateEmployees()
         {
-            Demo_Banking.ViewModels.Employee employeeViewModel
-                = new ViewModels.Employee()
+            Demo_Banking.ViewModels.EmployeeViewModel employeeViewModel
+                = new ViewModels.EmployeeViewModel()
                 {
                     Id = 20,
                     Name = "Second Employee"
@@ -74,7 +74,7 @@ namespace Demo_Banking.Controllers
 
 
         [HttpPost]
-        public IActionResult GenerateEmployees(ViewModels.Employee inputModel)
+        public IActionResult GenerateEmployees(ViewModels.EmployeeViewModel inputModel)
         {
             return View("EditEmployee", inputModel);
         }
