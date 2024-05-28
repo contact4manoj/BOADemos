@@ -11,25 +11,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ASPNetCoreMiddleware02.png = ASPNetCoreMiddleware02.png
 		ASPNetFrameworkPipeline.png = ASPNetFrameworkPipeline.png
 		DotNet Framework.pdf = DotNet Framework.pdf
+		Readme.txt = Readme.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_IoC", "Demo_IoC\Demo_IoC.csproj", "{C5A72B96-8B71-4BB8-B435-3FB3E5A9C545}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_DI", "Demo_DI\Demo_DI.csproj", "{73CB260D-75D0-49F8-B215-346C57C23678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_DI", "Demo_DI\Demo_DI.csproj", "{73CB260D-75D0-49F8-B215-346C57C23678}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_WebFW", "Demo_WebFW\Demo_WebFW.csproj", "{405E6E15-1733-484D-9904-0D865A86CAEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_WebMvc3", "Demo_WebMvc3\Demo_WebMvc3.csproj", "{5CEAFC1B-A546-461B-A03C-4DC1DE6B3C50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_WebMvc3", "Demo_WebMvc3\Demo_WebMvc3.csproj", "{5CEAFC1B-A546-461B-A03C-4DC1DE6B3C50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_WebMvc8", "Demo_WebMvc8\Demo_WebMvc8.csproj", "{C9FAB4E8-CD96-46BE-A2AB-9ADC0EC26544}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_WebMvc8", "Demo_WebMvc8\Demo_WebMvc8.csproj", "{C9FAB4E8-CD96-46BE-A2AB-9ADC0EC26544}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_WebApi8", "Demo_WebApi8\Demo_WebApi8.csproj", "{771E1861-E275-4CB6-B3A9-CB30D198130B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_WebApi8", "Demo_WebApi8\Demo_WebApi8.csproj", "{771E1861-E275-4CB6-B3A9-CB30D198130B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_WebApi8Minimal", "Demo_WebApi8Minimal\Demo_WebApi8Minimal.csproj", "{C30ED801-A773-47F4-AA7D-482FECE7C678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_WebApi8Minimal", "Demo_WebApi8Minimal\Demo_WebApi8Minimal.csproj", "{C30ED801-A773-47F4-AA7D-482FECE7C678}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_DI_Services", "Demo_DI_Services\Demo_DI_Services.csproj", "{2F736FCD-C65F-4192-990A-A265F5DAA649}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_Banking", "Demo_Banking\Demo_Banking.csproj", "{40494042-2DC5-4CDF-8DC6-7EDABE0C0916}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_Banking", "Demo_Banking\Demo_Banking.csproj", "{40494042-2DC5-4CDF-8DC6-7EDABE0C0916}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
