@@ -14,3 +14,33 @@ from Controller to the View:
 	ViewData
 	TempData
 	ViewModel (best - typed data)
+
+Entity Framework Code-First Approach:
+1. Added Nuget Packages: 
+		Microsoft.EntityFrameworkCore.SqlServer (latest version under the .NET version of the Project) 
+		Microsoft.EntityFrameworkCore.Tools	    (latest version under the .NET version of the Project)
+2. Define the Model(s)
+3. Define the DbContext 
+		Expose the collection of the Model (DbSet<T>)
+4. Configure the connection string: appsetting.(envirionment).json
+5. Program.cs
+	Extract the connection string using the Configuration Service
+	Register the EF Core DbContext object, 
+		using the options pattern initialize the SQlService Service providing the connection string
+6. Run EF Core Migrations (in Package Manager Console / Terminal )
+	NOTE: Startup Project should be selected correctly, and PM Console Project should match the same.
+	a. Add-Migration <name>
+	b. Update-Database
+
+
+EF Migration Commands
+	Add-Migration
+	Bundle-Migration
+	Drop-Database
+	Get-DbContext
+	Get-Migration
+	Optimize-DbContext
+	Remove-Migration
+	Scaffold-DbContext
+	Script-Migration
+	Update-Database
