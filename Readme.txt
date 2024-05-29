@@ -58,3 +58,5 @@ EF Migration Commands
 	Scaffold-DbContext
 	Script-Migration
 	Update-Database
+
+OWASP : Open Worldwide Application Security Project

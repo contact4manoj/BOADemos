@@ -22,8 +22,19 @@ namespace BankingProject.WebMvc.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Products.Include(p => p.Category);
-            return View(await applicationDbContext.ToListAsync());
+            var products = await _context.Products
+                                         .Include(p => p.Category)
+                                         .ToListAsync();
+            return View(products);
+        }
+
+        public async Task<IActionResult> Index2(int categoryId)
+        {
+            var products = await _context.Products
+                                         .Where(p => p.CId == categoryId)
+                                         .Include(p => p.Category)
+                                         .ToListAsync();
+            return View("Index", products);
         }
 
         // GET: Products/Details/5
