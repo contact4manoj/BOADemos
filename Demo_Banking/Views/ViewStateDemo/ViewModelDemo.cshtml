@@ -1,0 +1,13 @@
+﻿@model IList<Demo_Banking.ViewModels.EmployeeViewModel>
+
+@{
+}
+
+<h1>ViewModel Demo</h1>
+
+<ul>
+    @foreach(var employee in Model)
+    {
+        <li> @employee.Name ( @employee.Id ) </li>
+    }
+</ul>

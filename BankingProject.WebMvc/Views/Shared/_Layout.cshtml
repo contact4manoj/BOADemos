@@ -30,10 +30,18 @@
                                 Manage
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item"
-                                        asp-controller="Categories" asp-action="Index">Categories</a></li>
-                                <li><a class="dropdown-item"
-                                        asp-controller="Products" asp-action="Index">Products</a></li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        asp-controller="Categories" asp-action="Index">Categories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       asp-controller="Categories" asp-action="IndexWithViewModel">Categories (ViewModel)</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        asp-controller="Products" asp-action="Index">Products</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

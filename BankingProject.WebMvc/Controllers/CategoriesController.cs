@@ -28,6 +28,23 @@ public class CategoriesController : Controller
         return View(categoriesWithProducts);
     }
 
+    public async Task<IActionResult> IndexWithViewModel()
+    {
+        var categoriesList 
+            = await _context.Categories
+                    .Include(categories => categories.Products)
+                    .Select(c => new CategoriesListViewModel
+                    {
+                        CategoryId = c.CategoryId,
+                        CategoryName = c.CategoryName,
+                        CategoryDescription = c.CategoryDescription,
+                        NumberOfProducts = c.Products == null ? 0 : c.Products.Count
+                    })
+                    .ToListAsync();
+        return View(categoriesList);
+    }
+
+
     // GET: Categories/Details/5
     public async Task<IActionResult> Details(int? id)
     {         

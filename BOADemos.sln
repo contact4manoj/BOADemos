@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ASPNetFrameworkPipeline.png = ASPNetFrameworkPipeline.png
 		DotNet Framework.pdf = DotNet Framework.pdf
 		Readme.txt = Readme.txt
+		ViewBagViewDataTempDataSession.png = ViewBagViewDataTempDataSession.png
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_IoC", "Demo_IoC\Demo_IoC.csproj", "{C5A72B96-8B71-4BB8-B435-3FB3E5A9C545}"
@@ -32,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_DI_Services", "Demo_DI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_Banking", "Demo_Banking\Demo_Banking.csproj", "{40494042-2DC5-4CDF-8DC6-7EDABE0C0916}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingProject.WebMvc", "BankingProject.WebMvc\BankingProject.WebMvc.csproj", "{A676CDC1-B822-461F-BA74-0DFDA24C5761}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingProject.WebMvc", "BankingProject.WebMvc\BankingProject.WebMvc.csproj", "{A676CDC1-B822-461F-BA74-0DFDA24C5761}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
