@@ -1,3 +1,13 @@
+NAMING CONVENTIONS
+														Hungarian Naming Convention
+FIRSTNAME	Capital Casing		Constant	NAME		NAMESTRING		STRNAME	
+FirstName	Pascal Casing		Public		Name		NameString		StrName
+firstname	Small Casing		Local		name		namestring		strname
+firstName	Camel Casing		Protected	name		nameString		strName
+_firstName	Camel Casing		Private		_name		_nameString		_strName
+
+--------------------------
+
 MODEL
 	a type representing shape of the data 
 
@@ -9,11 +19,15 @@ Types of Models:
 	PageModel			ASP.NET Razor Pages 
 						represents the Model of the data sent to the Razor View from the Code-Beside File(.cshtml.cs)
 
+--------------------------
+
 from Controller to the View:
 	ViewBag
 	ViewData
 	TempData
 	ViewModel (best - typed data)
+
+--------------------------
 
 Entity Framework Code-First Approach:
 1. Added Nuget Packages: 
