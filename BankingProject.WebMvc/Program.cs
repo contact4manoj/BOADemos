@@ -21,7 +21,24 @@ var connString
 builder.Services
        .AddDbContext<ApplicationDbContext>(options =>
        {
-            options.UseSqlServer(connString);
+           // options.UseSqlServer(connString);
+
+           options.UseSqlServer(connString, builderOptions =>
+           {
+               // Configure the Retry On Failure Policy on every single operation on the database.
+               builderOptions.EnableRetryOnFailure(
+                   maxRetryCount: 5,
+                   maxRetryDelay: TimeSpan.FromSeconds(5),
+                   errorNumbersToAdd: null);
+           });
+
+           // log the SQL Query
+           options.LogTo(Console.WriteLine, LogLevel.Information);
+
+           // Enable detailed errors when handling data values exceptions that occur
+           // while processing stored query results, mainly occuring due to misconfiguration of entity properties.
+           options.EnableDetailedErrors();
+
        });
 
 // Register the OWIN IdentityService using the custom User model mapped to the DbContext.

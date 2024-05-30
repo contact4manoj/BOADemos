@@ -33,6 +33,13 @@ public class CategoriesApiController : ControllerBase
         return await _context.Categories.ToListAsync();
     }
 
+    [HttpGet(nameof(CategoriesApiController.GetCategoriesWithProducts))]
+    public async Task<ActionResult<IEnumerable<Category>>> GetCategoriesWithProducts()
+    {
+        return await _context.Categories.Include(c => c.Products).ToListAsync();
+    }
+
+
     // GET: api/CategoriesApi/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Category>> GetCategory(int id)

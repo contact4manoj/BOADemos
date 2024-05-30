@@ -18,6 +18,7 @@ Types of Models:
 	DomainModel			represents the data as per the businees rule (Customer->Info, Orders, Order Details, Shipping)
 	PageModel			ASP.NET Razor Pages 
 						represents the Model of the data sent to the Razor View from the Code-Beside File(.cshtml.cs)
+	DtoModel			Data Transformation Model -> represent shape of data sent by an API
 
 --------------------------
 

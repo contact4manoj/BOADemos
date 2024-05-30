@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace BankingProject.WebMvc.Models;
 
@@ -41,6 +42,7 @@ public class Product
     [Required]
     public int CId { get; set; }
 
+    [JsonIgnore]
     [ForeignKey(nameof(Product.CId))]
     public Category? Category { get; set; }
 
