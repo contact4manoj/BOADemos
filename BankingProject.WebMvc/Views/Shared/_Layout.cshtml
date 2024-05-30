@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject IWebHostEnvironment _env
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -58,7 +60,12 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - BankingProject.WebMvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - BankingProject.WebMvc |
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> |
+            @if (_env.IsDevelopment())
+            {
+                <a href="/swagger">API Documentation</a>
+            }
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

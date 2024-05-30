@@ -94,3 +94,16 @@ Create ASP.NET Project
 - Optimized Controllers & Views as need
 - Create ViewModel if needed
 
+--------------------
+
+Standards for API
+	Open API 
+	OData  (Open API Data)
+	OAuth  (Open API Authentication and Authorization)
+
+To add API Documentation
+01 Add "Swashbuckle.AspNetCore" Nuget Package
+02 In Program.cs
+	(a) Register Swagger Gen Services
+	(b) Activate the Middleware
+

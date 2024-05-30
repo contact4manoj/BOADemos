@@ -1,0 +1,8 @@
+﻿GET https://localhost:7250/WeatherForecast
+
+
+
+###
+
+GET https://api.data.gov.in/resource/97878f8a-97c3-4b52-b4bd-a40c530d0fe6?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json
+

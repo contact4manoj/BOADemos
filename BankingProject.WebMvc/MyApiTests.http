@@ -1,0 +1,15 @@
+﻿GET https://localhost:7129/api/CategoriesApi
+
+###
+
+POST https://localhost:7129/api/CategoriesApi
+Content-Type: application/json; charset=utf-8
+
+{
+    "categoryId": 0,
+    "categoryName": "Credit Cards",
+    "categoryDescription": "The Credit Cards for the Bank"
+}
+
+###
+
