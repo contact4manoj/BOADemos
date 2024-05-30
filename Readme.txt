@@ -33,6 +33,7 @@ Entity Framework Code-First Approach:
 1. Added Nuget Packages: 
 		Microsoft.EntityFrameworkCore.SqlServer (latest version under the .NET version of the Project) 
 		Microsoft.EntityFrameworkCore.Tools	    (latest version under the .NET version of the Project)
+		Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore	(same as EF.SqlServer nuget package)
 2. Define the Model(s)
 3. Define the DbContext 
 		Expose the collection of the Model (DbSet<T>)
@@ -45,7 +46,13 @@ Entity Framework Code-First Approach:
 	NOTE: Startup Project should be selected correctly, and PM Console Project should match the same.
 	a. Add-Migration <name>
 	b. Update-Database
-
+--- Steps of OWIN Identity Management
+7. Add the Nuget Packages:
+		Microsoft.AspNetCore.Identity.EntityFrameworkCore		(same as EF.SqlServer nuget package)
+		Microsoft.AspNetCore.Identity.UI						(same as EF.SqlServer nuget package)
+8. Add the custom IdentityUser model (BankingUser)
+9. Changed the ApplicationDbContext base class from "DbContext" to "IdentityDbContext<BankingUser>"
+10. Configure Program.cs to register the IdentityServices using the custom User model.
 
 EF Migration Commands
 	Add-Migration
@@ -60,6 +67,14 @@ EF Migration Commands
 	Update-Database
 
 OWASP : Open Worldwide Application Security Project
+KATANA : Security Models 
+OWIN   : Open Web Interface for .NET (implementation of Katana)
+
+	Role						Manager, Admin, User
+	User						Name, Age, DOB, PassportInfo
+	Permissions					CanTravelAbroad, CanDrink
+	Claims						HasPassport
+	Token						(external logins - Facebook, Google)
 
 ----------------------------------------
 
