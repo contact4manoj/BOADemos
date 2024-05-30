@@ -60,3 +60,14 @@ EF Migration Commands
 	Update-Database
 
 OWASP : Open Worldwide Application Security Project
+
+----------------------------------------
+
+Create ASP.NET Project 
+- Add Model
+- Add DbContext
+- Run Migrations
+- Add Controller with Views using EF
+- Optimized Controllers & Views as need
+- Create ViewModel if needed
+

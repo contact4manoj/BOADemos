@@ -12,7 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ASPNetFrameworkPipeline.png = ASPNetFrameworkPipeline.png
 		DotNet Framework.pdf = DotNet Framework.pdf
 		Readme.txt = Readme.txt
-		ViewBagViewDataTempDataSession.png = ViewBagViewDataTempDataSession.png
+		ViewBagViewDataTempDataSession01.png = ViewBagViewDataTempDataSession01.png
+		ViewBagViewDataTempDataSession02.png = ViewBagViewDataTempDataSession02.png
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_IoC", "Demo_IoC\Demo_IoC.csproj", "{C5A72B96-8B71-4BB8-B435-3FB3E5A9C545}"

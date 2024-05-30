@@ -86,8 +86,10 @@ public class CategoriesController : Controller
         [Bind("CategoryName,CategoryDescription")] Category category)
     {
         // duplicate checking on CategoryName
+        // bool isDuplicateFound
+        //    = _context.Categories.Any(c => c.CategoryName != category.CategoryName);
         bool isDuplicateFound 
-            = _context.Categories.Any(c => c.CategoryName !=  category.CategoryName);
+            = _context.Categories.Any(c => !c.CategoryName.Equals(category.CategoryName));
         if (isDuplicateFound)
         {
             ModelState.AddModelError(nameof(Category.CategoryName), "Duplicate Category found!");
@@ -134,10 +136,19 @@ public class CategoriesController : Controller
             return NotFound();
         }
 
-        //TODO: duplicate check
+        // duplicate checking on CategoryName
         //    (a) if CategoryName does not change, then check for duplicate
         //    (b) if CategoryName changes, then check for duplicate
-
+        //bool isDuplicateFound
+        //    = _context.Categories.Any(c => c.CategoryName == category.CategoryName
+        //                                   && c.CategoryId != category.CategoryId );
+        bool isDuplicateFound
+            = _context.Categories.Any(c => c.CategoryName.Equals(category.CategoryName)
+                                           && !c.CategoryId.Equals(category.CategoryId));
+        if (isDuplicateFound)
+        {
+            ModelState.AddModelError(nameof(Category.CategoryName), "Duplicate Category found!");
+        }
 
         if (ModelState.IsValid)
         {

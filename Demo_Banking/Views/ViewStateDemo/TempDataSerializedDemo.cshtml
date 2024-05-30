@@ -1,0 +1,31 @@
+﻿@using Demo_Banking.ViewModels
+
+@{
+    // Needs an explicit unboxing before consumption
+    // Needs null-check before consumption of the object
+    // Needs to be deserialized before consumption
+    var employeesJsonString = TempData["Employees"] as string;      // the JSON String
+    List<EmployeeViewModel>? employees = null;
+
+    if(employeesJsonString is not null)
+    {
+        employees = System.Text.Json.JsonSerializer.Deserialize<List<EmployeeViewModel>>(
+                            json: employeesJsonString, options: null);
+    }
+}
+
+<h1>TempData Demo (using Serialization)</h1>
+
+@if (employees is not null)
+{
+    <ul>
+        @foreach(var employee in employees)
+        {
+            <li> @employee.Name ( @employee.Id ) </li>
+        }
+    </ul>
+}
+else
+{
+    <div class="alert-danger">No employees found</div>
+}
