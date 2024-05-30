@@ -40,6 +40,9 @@ builder.Services
 builder.Services
        .AddControllersWithViews();
 
+builder.Services
+       .AddRazorPages();
+
 
 var app = builder.Build();
 
@@ -59,8 +62,14 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area}/{controller=Home}/{action=Index}/{id?}");
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapRazorPages();
+
 
 app.Run();

@@ -53,6 +53,8 @@ Entity Framework Code-First Approach:
 8. Add the custom IdentityUser model (BankingUser)
 9. Changed the ApplicationDbContext base class from "DbContext" to "IdentityDbContext<BankingUser>"
 10. Configure Program.cs to register the IdentityServices using the custom User model.
+11. Remove all existing migrations (because the DbContext class was reset), and regenerated, updated database
+
 
 EF Migration Commands
 	Add-Migration
@@ -75,6 +77,12 @@ OWIN   : Open Web Interface for .NET (implementation of Katana)
 	Permissions					CanTravelAbroad, CanDrink
 	Claims						HasPassport
 	Token						(external logins - Facebook, Google)
+
+	ISignInManager
+	IUserManager
+	IRoleManager
+	this.User
+	this.User.IsInRole("Admin")
 
 ----------------------------------------
 

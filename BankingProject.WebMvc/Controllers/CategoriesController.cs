@@ -1,9 +1,11 @@
 ﻿using BankingProject.WebMvc.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankingProject.WebMvc.Controllers;
 
+[Authorize] 
 public class CategoriesController : Controller
 {
     private readonly ApplicationDbContext _context;
