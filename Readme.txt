@@ -1,3 +1,7 @@
+Feedback Form: 
+https://forms.gle/TbXxkppXsE3jYUeT9
+
+
 NAMING CONVENTIONS
 														Hungarian Naming Convention
 FIRSTNAME	Capital Casing		Constant	NAME		NAMESTRING		STRNAME	
