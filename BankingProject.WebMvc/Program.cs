@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 
+using Microsoft.AspNetCore.Identity.UI.Services;            // needed for IEmailSender
+
 var builder = WebApplication.CreateBuilder(args);
 
 //--- Add services to the container.  (ConfigureServices)
@@ -98,7 +100,7 @@ builder.Services.AddLogging(configureOptions =>
 });
 
 // Register the Custom Email Sender Service.
-// -- builder.Services.AddSingleton<IEmailSender, MyEmailSenderService>();
+builder.Services.AddSingleton<IEmailSender, MyEmailSenderService>();
 
 var app = builder.Build();
 
