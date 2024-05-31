@@ -1,6 +1,10 @@
 using BankingProject.WebMvc.Data;
+using BankingProject.WebMvc.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -60,11 +64,41 @@ builder.Services
 builder.Services
        .AddRazorPages();
 
+// To mitigate Cross-Site Request Forgery (XSRF/CSRF) attacks:
+// Register the Service to automatically validate anti-forgery tokens for unsafe non-API HTTP Methods by default
+// instead of applying [ValidateAntiForgeryToken] for all non-GET methods.
+// NOTE: It is not applied for the HTTP - GET, HEAD, OPTIONS and TRACE methods.
+builder.Services
+       .AddAntiforgery();
+
+
+// Register the GDPR Compliant Cookie Consent Service
+builder.Services
+       .Configure<CookiePolicyOptions>(options =>
+        {
+            // Determine if user consent for non-essential cookies is needed for a given request.
+            options.CheckConsentNeeded = context => true;
+
+            options.MinimumSameSitePolicy = SameSiteMode.None;
+
+            options.ConsentCookieValue = "true";        // customize the cookie consent value.
+        });
+
+
 // Register Swagger/OpenAPI Documentation Generator
 // For more information: https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Register the Logging Provider Service. And map it to the Console Window.
+// NOTE: Console is the Default in .NET 8
+builder.Services.AddLogging(configureOptions =>
+{
+    configureOptions.AddConsole(Console.WriteLine);
+});
+
+// Register the Custom Email Sender Service.
+// -- builder.Services.AddSingleton<IEmailSender, MyEmailSenderService>();
 
 var app = builder.Build();
 
@@ -87,8 +121,17 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+// Call the (XSRF/CSRF) mitigation middleware
+app.UseAntiforgery();
+
+// Call the GDPR Compliance Cookie Consent Policy Middleware
+app.UseCookiePolicy();
+
+
 app.UseRouting();
 
+// Call the OWIN Middleware
+// app.UseAuthentication();             // implicitly done in .NET 7 and above
 app.UseAuthorization();
 
 
@@ -100,5 +143,25 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
+// Custom middleware to seed the database.
+app.Use( async (context, next) =>
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+        bool dbExists = dbContext.GetService<IDatabaseCreator>().CanConnect();
+        if (!dbExists)
+        {
+            dbContext.Database.EnsureCreated();
+        }
+
+        await dbContext.SeedCategoriesAsync();
+
+        // dbContext.Database.Migrate();
+    }
+
+    await next.Invoke();
+});
 
 app.Run();

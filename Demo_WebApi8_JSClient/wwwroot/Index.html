@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AJAX Sample</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>DEMO: Web API Client using JavaScript (AJAX leverage HttpClient)</h1>
+    
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Date</th>
+                    <th>TemperatureC</th>
+                    <th>TemperatureF</th>
+                    <th>Summary</th>
+                </tr>
+            </thead>
+            <tbody id="tableInfo">
+            </tbody>
+        </table>
+
+        <p id="tableCounter"></p>
+    </div>
+
+
+
+    <script>
+
+        function displayItems(data) {
+
+            // for debug purposes
+            console.log(data);
+
+            const tBody = document.getElementById('tableInfo');
+            tBody.innerHTML = '';
+
+            displayCount(data.length);
+
+            data.forEach(item => {
+                let tr = tBody.insertRow();
+
+                let td1 = tr.insertCell(0);
+                let content1 = document.createTextNode(item.date);
+                td1.appendChild(content1);
+
+                let td2 = tr.insertCell(1);
+                let content2 = document.createTextNode(item.temperatureC);
+                td2.appendChild(content2);
+
+                let td3 = tr.insertCell(2);
+                let content3 = document.createTextNode(item.temperatureF);
+                td3.appendChild(content3);
+
+                let td4 = tr.insertCell(3);
+                let content4 = document.createTextNode(item.summary);
+                td4.appendChild(content4);
+            });
+            
+        }
+
+        function displayCount(itemCount) {
+            const name = (itemCount === 1) ? 'row' : 'rows';
+            document.getElementById('tableCounter').innerText = `${itemCount} ${name}`;
+        }
+
+
+        const uri = "https://localhost:7250/WeatherForecast";
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            }
+        };
+        fetch(uri, options)
+            .then(response => response.json())
+            .then(data => displayItems(data))
+            .catch(error => console.error('Unable to get the items!', error));
+
+    </script>
+</body>
+</html>

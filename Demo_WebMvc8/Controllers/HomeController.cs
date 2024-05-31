@@ -15,7 +15,8 @@ namespace Demo_WebMvc8.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            // return View();
+            return View(viewName: "Index");
         }
 
         public IActionResult Privacy()

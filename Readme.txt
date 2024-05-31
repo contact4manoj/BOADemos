@@ -108,3 +108,29 @@ To add API Documentation
 	(a) Register Swagger Gen Services
 	(b) Activate the Middleware
 
+-------
+Testing Types
+	Unit Level Testing
+	Regression Testing
+	Load Testing
+	VAPT (Vulnerability Assessment and Penetration Testing)
+	Integration Testing
+
+Unit Testing Frameworks
+	MSUnit
+	NUnit
+	xUnit
+Integration Testing Frameworks
+	xUnit
+Nuget - Mocking Framework (MocK)
+
+-----------------------
+
+www.google.co.in
+	<script src="http://www.google.co.in/demo.js"></script>
+	<img src="logo.gif" />
+
+
+(A) PRE-FETCH		<= HEADER check existing in local cache
+(B) FETCH		<= HEADER + BODY
+

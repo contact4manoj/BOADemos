@@ -12,10 +12,14 @@ namespace BankingProject.WebMvc.Controllers
 {
     public class ProductsController : Controller
     {
+        private readonly ILogger<ProductsController> _logger;
         private readonly ApplicationDbContext _context;
 
-        public ProductsController(ApplicationDbContext context)
+        public ProductsController(
+            ILogger<ProductsController> logger,
+            ApplicationDbContext context)
         {
+            _logger = logger;
             _context = context;
         }
 

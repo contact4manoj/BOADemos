@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<BankingProject.WebMvc.Models.Product>
 
+@inject ILogger<Views_Products_Index> _logger;
+
 @{
     ViewData["Title"] = "Index";
+    _logger.LogInformation("landed on the Index page of the Products!");
 }
 
 <h1>Index</h1>

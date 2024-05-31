@@ -15,4 +15,8 @@ public class BankingUser : IdentityUser
     [StringLength(100, ErrorMessage = "{0} cannot have more than {1} characters.")]
     public string LastName { get; set; } = string.Empty;
 
+
+    [PersonalData]          // Configure GDPR compliance
+    public string? CreditCardNumber { get; set; }
+
 }
