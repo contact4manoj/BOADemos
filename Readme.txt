@@ -1,6 +1,10 @@
 Feedback Form: 
 https://forms.gle/TbXxkppXsE3jYUeT9
 
+Post-Training Assessment:
+https://forms.gle/DMPKphAbm39ybDYp9
+
+
 
 NAMING CONVENTIONS
 														Hungarian Naming Convention
